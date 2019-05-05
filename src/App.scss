@@ -1,8 +1,60 @@
+$shade1: #383536; // Background Highlight
+$shade2: #E8E9EB; // Text
+$shade3: #636564; // Lightest Dark
+$shade4: #2A2B2A; // Background
+$shade5: #ED474A; // Red
+$shade6: #2274A5; // Blue
+$shade7: #DDB967; // Yellow
+
 
 body {
-	background-color: darkgrey;
+	background-color: $shade4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
 }
 
 .calculator {
-	background-color: red;
+	background-color: $shade4;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	
+	>div {
+		border-bottom: 1px solid $shade7;
+		margin-bottom: 4px;
+	}
+
+	button,
+	select,
+	input {
+		background-color: $shade4;
+		border: 1px dotted $shade7;
+		color: $shade7;
+		border-radius: 4px;
+		padding: 4px;
+		margin-bottom: 4px;
+		margin-right: 4px;
+		text-align: right;
+
+		&:focus {
+			outline: none;
+			background-color: $shade1;
+		}
+	}
+
+	input {
+		width: 150px;
+	}
+
+	span {
+		color: $shade7;	
+		padding-right: 4px;	
+	}
 }

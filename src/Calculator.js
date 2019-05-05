@@ -23,7 +23,6 @@ class Calculator extends Component {
 	}
 
 	updateField = field => value => {
-		console.log('UPDATE FIELD');
 		this.setState({
 			[field]: value,
 			result: undefined,
@@ -60,8 +59,6 @@ class Calculator extends Component {
 			operations,
 		} = this;
 
-		console.log('STATE', this.state);
-
 		const shouldShowButton = 
 			a !== '' &&
 			b !== '' && 
@@ -73,20 +70,23 @@ class Calculator extends Component {
 					value={a}
 					onChange={updateField('a')}/>
 
-				<select 
-					value={operationName}
-					onChange={unboxThen(updateField('operationName'))}>
-					{Object.keys(operations).map(operationName => 
-						<option 
-							value={operationName}
-							children={operationName}
-							key={operationName}/>
-					)}
-				</select>
+				<div>
+					<select 
+						value={operationName}
+						onChange={unboxThen(updateField('operationName'))}>
+						{Object.keys(operations).map(operationName => 
+							<option 
+								value={operationName}
+								children={operationName}
+								key={operationName}/>
+						)}
+					</select>
 
-				<PositiveNumberInput
-					value={b}
-					onChange={updateField('b')}/>
+					<PositiveNumberInput
+						value={b}
+						onChange={updateField('b')}/>
+
+				</div>
 
 				{shouldShowButton &&
 					<button

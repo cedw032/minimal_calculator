@@ -1,5 +1,40 @@
 body {
-  background-color: darkgrey; }
+  background-color: #2A2B2A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed; }
 
 .calculator {
-  background-color: red; }
+  background-color: #2A2B2A;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; }
+  .calculator > div {
+    border-bottom: 1px solid #DDB967;
+    margin-bottom: 4px; }
+  .calculator button,
+  .calculator select,
+  .calculator input {
+    background-color: #2A2B2A;
+    border: 1px dotted #DDB967;
+    color: #DDB967;
+    border-radius: 4px;
+    padding: 4px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    text-align: right; }
+    .calculator button:focus,
+    .calculator select:focus,
+    .calculator input:focus {
+      outline: none;
+      background-color: #383536; }
+  .calculator input {
+    width: 150px; }
+  .calculator span {
+    color: #DDB967;
+    padding-right: 4px; }
